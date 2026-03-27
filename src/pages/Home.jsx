@@ -34,17 +34,17 @@ const Home = () => {
         <div className="home-page">
             {/* Hero Section */}
             <section className="hero" style={{ 
-                padding: '140px 0 100px', 
+                padding: '120px 0 80px', 
                 textAlign: 'center', 
                 position: 'relative',
                 overflow: 'hidden',
-                minHeight: '80vh',
+                minHeight: '600px',
                 display: 'flex',
                 alignItems: 'center'
             }}>
                 <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, zIndex: 0 }}>
                     <LiquidEther
-                        colors={['#0A0A0A', '#9B111E', '#D32F2F', '#FF5722', '#FF9800']}
+                        colors={['#0E1433', '#222C5E', '#3B4A8F', '#8A95C9', '#EEF1FA']}
                         mouseForce={35}
                         cursorSize={130}
                         isViscous
@@ -66,18 +66,18 @@ const Home = () => {
                         EXCLUSIVELY FOR HVAC BUSINESSES
                     </span>
                     
-                    <div style={{ position: 'relative', height: '200px', marginBottom: '20px', width: '100%', zIndex: 10, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div className="hero-text-container" style={{ position: 'relative', height: 'clamp(100px, 20vw, 200px)', marginBottom: '20px', width: '100%', zIndex: 10, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         <TextPressure
-                            text="ThermoRank"
+                            text="THERMORANK"
                             flex
                             alpha={false}
                             stroke
                             width
                             weight
                             italic={false}
-                            textColor="#D32F2F"
-                            strokeColor="#9B111E"
-                            minFontSize={80}
+                            textColor="#3B4A8F"
+                            strokeColor="#151D42"
+                            minFontSize={window.innerWidth < 768 ? 40 : 80}
                         />
                     </div>
 
@@ -99,8 +99,8 @@ const Home = () => {
                         {stats.map((stat, i) => (
                             <ScrollFloat key={i} delay={i * 100}>
                                 <div style={{ textAlign: 'center' }}>
-                                    <div style={{ color: 'var(--primary)', marginBottom: '10px', display: 'flex', justifyContent: 'center' }}>{stat.icon}</div>
-                                    <div style={{ fontSize: '2rem', fontWeight: '800' }}>{stat.value}</div>
+                                    <div style={{ color: 'var(--accent-cream)', marginBottom: '10px', display: 'flex', justifyContent: 'center' }}>{stat.icon}</div>
+                                    <div style={{ fontSize: '2rem', fontWeight: '800', color: 'var(--accent-cream)' }}>{stat.value}</div>
                                     <div style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>{stat.label}</div>
                                 </div>
                             </ScrollFloat>
@@ -159,7 +159,7 @@ const Home = () => {
             </section>
 
             {/* Services Preview */}
-            <section style={{ background: '#050505' }}>
+            <section style={{ background: '#121940' }}>
                 <div className="container">
                     <div style={{ textAlign: 'center', marginBottom: '60px' }}>
                         <h2>The HVAC Growth Toolkit</h2>
@@ -203,7 +203,7 @@ const Home = () => {
             <section style={{ padding: '80px 0' }}>
                 <div className="container">
                     <ScrollFloat delay={100}>
-                        <div className="glass" style={{ padding: '80px 40px', borderRadius: '32px', textAlign: 'center', background: 'linear-gradient(135deg, rgba(255,87,34,0.1) 0%, rgba(211,47,47,0.1) 100%)', border: '1px solid var(--primary)' }}>
+                        <div className="glass" style={{ padding: '80px 40px', borderRadius: '32px', textAlign: 'center', background: 'linear-gradient(135deg, rgba(59,74,143,0.1) 0%, rgba(14,20,51,0.1) 100%)', border: '1px solid var(--primary)' }}>
                             <h2 style={{ fontSize: '3rem', marginBottom: '24px' }}>Ready to Scale Your HVAC Business?</h2>
                             <p style={{ fontSize: '1.2rem', marginBottom: '40px', maxWidth: '600px', margin: '0 auto 40px' }}>
                                 Claim your exclusive territory today and get a free marketing audit. No pressure, just a plan to get you more booked jobs.

@@ -13,13 +13,16 @@ const Contact = () => {
         email: '',
         message: ''
     });
+    const [loading, setLoading] = useState(false);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        if (e) e.preventDefault();
+        setLoading(true);
+        setStatus('');
         
         try {
             const res = await fetch('/api/send-email', {
@@ -41,10 +44,15 @@ const Contact = () => {
             if (res.ok) {
                 setStatus('success');
             } else {
-                console.error('Failed to send email');
+                const errorData = await res.json().catch(() => ({}));
+                console.error('Backend Error:', errorData);
+                setStatus('error');
             }
         } catch (error) {
-            console.error('Error sending request:', error);
+            console.error('Network Error:', error);
+            setStatus('error');
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -71,7 +79,19 @@ const Contact = () => {
                                     <p style={{ color: 'var(--text-muted)' }}>An HVAC marketing specialist will contact you within 24 hours.</p>
                                 </div>
                             ) : (
-                                <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                                <>
+                                    {status === 'error' && (
+                                        <div style={{ background: 'rgba(211,47,47,0.1)', border: '1px solid #ff5252', padding: '20px', borderRadius: '12px', marginBottom: '24px', color: '#ff5252', textAlign: 'center' }}>
+                                            <p style={{ fontWeight: '700', marginBottom: '10px' }}>Failed to send your request.</p>
+                                            <button 
+                                                onClick={() => handleSubmit()} 
+                                                style={{ background: '#ff5252', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '8px', cursor: 'pointer', fontWeight: '600' }}
+                                            >
+                                                Resend Email
+                                            </button>
+                                        </div>
+                                    )}
+                                    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
                                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
                                         <div>
                                             <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem' }}>Full Name</label>
@@ -93,7 +113,7 @@ const Contact = () => {
                                                 "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina",
                                                 "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
                                             ].map(state => (
-                                                <option key={state} value={state} style={{ background: '#1a1a1a', color: 'white' }}>{state}</option>
+                                                <option key={state} value={state} style={{ background: '#0E1433', color: 'white' }}>{state}</option>
                                             ))}
                                         </select>
                                     </div>
@@ -124,7 +144,7 @@ const Contact = () => {
                                                         borderRadius: '10px',
                                                         border: '1px solid',
                                                         borderColor: techs === option ? 'var(--primary)' : 'var(--border)',
-                                                        background: techs === option ? 'rgba(211, 47, 47, 0.1)' : 'rgba(255,255,255,0.03)',
+                                                        background: techs === option ? 'rgba(59, 74, 143, 0.1)' : 'rgba(255,255,255,0.03)',
                                                         color: techs === option ? 'var(--primary)' : 'var(--text-muted)',
                                                         fontWeight: techs === option ? '700' : '500',
                                                         transition: 'all 0.2s ease',
@@ -136,9 +156,17 @@ const Contact = () => {
                                             ))}
                                         </div>
                                     </div>
-                                    <button type="submit" className="btn btn-primary" style={{ padding: '16px' }}>Request My Free Audit</button>
+                                    <button 
+                                        type="submit" 
+                                        className="btn btn-primary" 
+                                        disabled={loading}
+                                        style={{ padding: '16px', opacity: loading ? 0.7 : 1, cursor: loading ? 'not-allowed' : 'pointer' }}
+                                    >
+                                        {loading ? 'Sending Request...' : 'Request My Free Audit'}
+                                    </button>
                                 </form>
-                            )}
+                            </>
+                        )}
                         </div>
 
                         {/* Info */}
@@ -177,7 +205,7 @@ const Contact = () => {
                                 </div>
                             </div>
 
-                            <div className="glass" style={{ padding: '30px', marginTop: '40px', borderRadius: '20px', background: 'rgba(255, 87, 34, 0.05)' }}>
+                            <div className="glass" style={{ padding: '30px', marginTop: '40px', borderRadius: '20px', background: 'rgba(138, 149, 201, 0.05)' }}>
                                 <h4 style={{ marginBottom: '15px' }}>Exclusive Territory Check</h4>
                                 <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
                                     We only work with ONE HVAC company per zip code. Fill out the form to see if your area is still available for dominance.

@@ -10,11 +10,11 @@ const HVACLeadGen = () => {
                     <div style={{ position: 'absolute', top: '20%', left: '50%', transform: 'translateX(-50%)', width: '600px', height: '300px', background: 'var(--primary)', filter: 'blur(200px)', borderRadius: '50%' }}></div>
                 </div>
                 <div className="container" style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
-                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', background: 'rgba(211, 47, 47, 0.1)', padding: '8px 16px', borderRadius: '100px', marginBottom: '24px', border: '1px solid rgba(211, 47, 47, 0.2)' }}>
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', background: 'rgba(138, 149, 201, 0.1)', padding: '8px 16px', borderRadius: '100px', marginBottom: '24px', border: '1px solid rgba(138, 149, 201, 0.2)' }}>
                         <PhoneCall size={16} color="var(--primary)" />
                         <span style={{ fontSize: '0.9rem', fontWeight: '600', color: 'var(--primary)', letterSpacing: '1px', textTransform: 'uppercase' }}>Exclusive Lead Systems</span>
                     </div>
-                    <h1 style={{ fontSize: '4rem', marginBottom: '24px', fontWeight: '900', lineHeight: 1.1 }}>
+                    <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 4rem)', marginBottom: '24px', fontWeight: '900', lineHeight: 1.1 }}>
                         Own Your Leads. <br />
                         <span style={{ color: 'var(--primary)' }}>Stop Sharing with Competitors.</span>
                     </h1>
@@ -58,7 +58,7 @@ const HVACLeadGen = () => {
                 </div>
             </section>
 
-            <section style={{ background: '#080808', padding: '100px 0' }}>
+            <section style={{ background: '#121940', padding: '100px 0' }}>
                 <div className="container">
                     <div className="glass" style={{ padding: '60px', borderRadius: '32px', textAlign: 'center' }}>
                         <h2 style={{ fontSize: '2.5rem', marginBottom: '20px' }}>Why Best-In-Class HVAC Companies <br />Choose Exclusive Leads</h2>
@@ -70,17 +70,29 @@ const HVACLeadGen = () => {
                             <div style={{ padding: '30px', background: 'rgba(255,255,255,0.03)', borderRadius: '20px' }}>
                                 <h4 style={{ color: 'var(--primary)', marginBottom: '15px' }}>The Problem with Aggregators:</h4>
                                 <ul style={{ listStyle: 'none', padding: 0 }}>
-                                    <li style={{ marginBottom: '10px', display: 'flex', gap: '10px' }}><span style={{ color: '#D32F2F' }}>✘</span> 5 other techs call them first</li>
-                                    <li style={{ marginBottom: '10px', display: 'flex', gap: '10px' }}><span style={{ color: '#D32F2F' }}>✘</span> Price focused, low margin jobs</li>
-                                    <li style={{ marginBottom: '10px', display: 'flex', gap: '10px' }}><span style={{ color: '#D32F2F' }}>✘</span> You pay even if they don't answer</li>
+                                    <li style={{ marginBottom: '10px', display: 'flex', gap: '10px' }}><span style={{ color: '#EAF5F1', opacity: 0.5 }}>✘</span> 5 other techs call them first</li>
+                                    <li style={{ marginBottom: '10px', display: 'flex', gap: '10px' }}><span style={{ color: '#EAF5F1', opacity: 0.5 }}>✘</span> Price focused, low margin jobs</li>
+                                    <li style={{ marginBottom: '10px', display: 'flex', gap: '10px' }}><span style={{ color: '#EAF5F1', opacity: 0.5 }}>✘</span> You pay even if they don't answer</li>
                                 </ul>
+                                <div style={{ height: '8px', width: '100%', background: '#222C5E', borderRadius: '4px' }}>
+                                    <div style={{ height: '100%', width: '98%', background: 'linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%)', borderRadius: '4px' }}></div>
+                                </div>
                             </div>
-                            <div style={{ padding: '30px', background: 'rgba(211, 47, 47, 0.05)', borderRadius: '20px', border: '1px solid rgba(211, 47, 47, 0.2)' }}>
+                            <div style={{ padding: '20px', background: 'rgba(255,255,255,0.02)', borderRadius: '15px', border: '1px solid var(--border)' }}>
+                                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '15px' }}>
+                                    <span style={{ fontWeight: '700' }}>Mobile Conversion Rate</span>
+                                    <span style={{ color: 'var(--secondary)', fontWeight: '800' }}>14.2%</span>
+                                </div>
+                                <div style={{ height: '8px', width: '100%', background: '#222C5E', borderRadius: '4px' }}>
+                                    <div style={{ height: '100%', width: '85%', background: 'linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%)', borderRadius: '4px' }}></div>
+                                </div>
+                            </div>
+                            <div style={{ padding: '30px', background: 'rgba(138, 149, 201, 0.05)', borderRadius: '20px', border: '1px solid rgba(138, 149, 201, 0.2)' }}>
                                 <h4 style={{ color: 'var(--primary)', marginBottom: '15px' }}>The Thermo Rank Advantage:</h4>
                                 <ul style={{ listStyle: 'none', padding: 0 }}>
-                                    <li style={{ marginBottom: '10px', display: 'flex', gap: '10px' }}><span style={{ color: '#4CAF50' }}>✔</span> 100% Exclusive to YOUR brand</li>
-                                    <li style={{ marginBottom: '10px', display: 'flex', gap: '10px' }}><span style={{ color: '#4CAF50' }}>✔</span> High-ticket system replacement focus</li>
-                                    <li style={{ marginBottom: '10px', display: 'flex', gap: '10px' }}><span style={{ color: '#4CAF50' }}>✔</span> Full lead recording and qualifying</li>
+                                    <li style={{ marginBottom: '10px', display: 'flex', gap: '10px' }}><span style={{ color: 'var(--primary)' }}>✔</span> 100% Exclusive to YOUR brand</li>
+                                    <li style={{ marginBottom: '10px', display: 'flex', gap: '10px' }}><span style={{ color: 'var(--primary)' }}>✔</span> High-ticket system replacement focus</li>
+                                    <li style={{ marginBottom: '10px', display: 'flex', gap: '10px' }}><span style={{ color: 'var(--primary)' }}>✔</span> Full lead recording and qualifying</li>
                                 </ul>
                             </div>
                         </div>

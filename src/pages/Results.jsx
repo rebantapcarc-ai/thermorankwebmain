@@ -31,7 +31,7 @@ const Results = () => {
         <div className="results-page">
             <header style={{ padding: '120px 0 60px', background: 'var(--bg-card)', borderBottom: '1px solid var(--border)' }}>
                 <div className="container" style={{ textAlign: 'center' }}>
-                    <h1 style={{ fontSize: '3.5rem', marginBottom: '20px' }}>Proven HVAC <span style={{ color: 'var(--primary)' }}>Results</span></h1>
+                    <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 3.5rem)', marginBottom: '20px' }}>Proven HVAC <span style={{ color: 'var(--primary)' }}>Results</span></h1>
                     <p style={{ color: 'var(--text-muted)', maxWidth: '800px', margin: '0 auto' }}>
                         We don't just talk about leads. We deliver them. Here is how we've helped HVAC companies across the US scale their operations.
                     </p>
@@ -56,7 +56,7 @@ const Results = () => {
                                         <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '5px' }}>Before</div>
                                         <div style={{ fontWeight: '700', textDecoration: 'line-through', opacity: '0.6' }}>{study.before}</div>
                                     </div>
-                                    <div style={{ padding: '20px', background: 'rgba(255, 87, 34, 0.1)', borderRadius: '12px', border: '1px solid rgba(255, 87, 34, 0.2)' }}>
+                                    <div style={{ padding: '20px', background: 'rgba(59, 74, 143, 0.1)', borderRadius: '12px', border: '1px solid rgba(59, 74, 143, 0.2)' }}>
                                         <div style={{ fontSize: '0.8rem', color: 'var(--primary)', marginBottom: '5px' }}>After Thermo Rank</div>
                                         <div style={{ fontWeight: '800', fontSize: '1.2rem' }}>{study.after}</div>
                                     </div>

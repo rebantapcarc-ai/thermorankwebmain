@@ -7,9 +7,9 @@ const Footer = () => {
         <footer>
             <div className="container">
                 <div className="footer-grid">
-                    <div className="footer-col">
-                        <Link to="/" className="logo" style={{ marginBottom: '20px' }}>
-                            THERMO<span>RANK</span>
+                    <div className="footer-col" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                        <Link to="/" className="logo" style={{ color: 'var(--primary)', fontWeight: '900', fontSize: '1.5rem', textTransform: 'uppercase' }}>
+                            THERMO<span style={{ color: 'white' }}>RANK</span>
                         </Link>
                         <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
                             The #1 HVAC Digital Marketing Agency. We specialize in helping HVAC companies scale their business through targeted lead generation and SEO.

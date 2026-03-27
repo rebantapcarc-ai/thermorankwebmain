@@ -63,7 +63,7 @@ const Services = () => {
             {/* Header */}
             <header style={{ padding: '120px 0 60px', background: 'var(--bg-card)', borderBottom: '1px solid var(--border)' }}>
                 <div className="container" style={{ textAlign: 'center' }}>
-                    <h1 style={{ fontSize: '3.5rem', marginBottom: '20px' }}>Our HVAC <span style={{ color: 'var(--primary)' }}>Growth</span> Services</h1>
+                    <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 3.5rem)', marginBottom: '20px' }}>Our HVAC <span style={{ color: 'var(--primary)' }}>Growth</span> Services</h1>
                     <p style={{ color: 'var(--text-muted)', maxWidth: '800px', margin: '0 auto' }}>
                         We don't offer generic marketing. We offer specialized growth systems for HVAC businesses looking to dominate their local market.
                     </p>
@@ -78,7 +78,7 @@ const Services = () => {
                             <div key={i} className="glass" style={{ padding: '60px', borderRadius: '32px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '60px', alignItems: 'center' }}>
                                 <div style={{ order: i % 2 === 0 ? 1 : 2 }}>
                                     <div style={{ color: 'var(--primary)', marginBottom: '24px' }}>{service.icon}</div>
-                                    <h2 style={{ fontSize: '2.5rem', marginBottom: '24px' }}>{service.title}</h2>
+                                    <h2 style={{ fontSize: 'clamp(1.8rem, 5vw, 2.5rem)', marginBottom: '24px' }}>{service.title}</h2>
                                     <p style={{ color: 'var(--text-muted)', marginBottom: '32px', fontSize: '1.1rem' }}>{service.desc}</p>
                                     <Link to={service.link || "/contact"} className="btn btn-primary">{service.btnText || "Request Details"}</Link>
                                 </div>
@@ -113,7 +113,7 @@ const Services = () => {
                             { step: '04', title: 'Scale', desc: 'We optimize and drive leads month after month.' },
                         ].map((step, i) => (
                             <div key={i} style={{ textAlign: 'center' }}>
-                                <div style={{ fontSize: '3rem', fontWeight: '800', color: 'rgba(255, 87, 34, 0.2)', marginBottom: '-30px' }}>{step.step}</div>
+                                <div style={{ fontSize: '3rem', fontWeight: '800', color: 'rgba(59, 74, 143, 0.2)', marginBottom: '-30px' }}>{step.step}</div>
                                 <h3 style={{ marginBottom: '15px', position: 'relative' }}>{step.title}</h3>
                                 <p style={{ color: 'var(--text-muted)' }}>{step.desc}</p>
                             </div>
