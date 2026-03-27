@@ -1,107 +1,129 @@
 import React from 'react';
 import { Check } from 'lucide-react';
-import Button from '../components/ui/Button';
-import Section from '../components/ui/Section';
+import { Link } from 'react-router-dom';
 
 const Pricing = () => {
     const plans = [
         {
-            name: "Basic",
-            price: "$699",
-            description: "For small businesses that just need to get online.",
+            name: "Audit Phase",
+            price: "FREE",
+            description: "To see if your territory is still available.",
             features: [
-                "Professional 5-page website",
-                "Mobile-friendly & fast",
-                "Basic SEO setup",
-                "7-day delivery"
+                "Full SEO Audit of your current site",
+                "Competitor analysis",
+                "Local Keyword research",
+                "Marketing Roadmap report"
             ],
-            cta: "Get Started",
+            cta: "Request Free Audit",
             highlight: false
         },
         {
-            name: "Growth",
-            price: "$1199",
-            description: "For businesses that want a strong brand presence.",
+            name: "Dominance Plan",
+            price: "Custom",
+            description: "For high-growth HVAC teams looking to scale.",
             features: [
-                "Everything in Basic",
-                "Custom Logo",
-                "Custom color palette & typography",
-                "AI Website Assistant",
-                "14-day delivery"
+                "Exclusive territory rights",
+                "Customized Lead Engines",
+                "GMB & Local SEO management",
+                "Dedicated Account Manager",
+                "Monthly Performance reporting"
             ],
-            cta: "Get Started",
+            cta: "Start My Strategy Call",
             highlight: true,
             badge: "Best Value"
         },
         {
-            name: "Premium",
-            price: "$1499",
-            description: "For businesses that want done-for-you peace of mind.",
+            name: "Search Only",
+            price: "$999+",
+            description: "For local repair volume only.",
             features: [
-                "Everything in Growth",
-                "Priority delivery (7-10 days)",
-                "2 weeks post-launch support",
-                "1 guaranteed revision round",
-                "Full setup + deployment"
+                "Google Business focus",
+                "Local citation builds",
+                "Review strategy integration",
+                "3-Pack tracking"
             ],
-            cta: "Get Started",
+            cta: "Inquire Now",
             highlight: false
         }
     ];
 
     return (
-        <Section className="bg-transparent min-h-screen">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-                <h1 className="text-4xl font-bold text-slate-900 mb-6">Simple, Transparent Pricing</h1>
-                <p className="text-xl text-slate-600">
-                    Choose the plan that fits your needs. No hidden monthly fees for design.
-                </p>
-            </div>
+        <div className="pricing-page">
+            <header style={{ padding: '120px 0 60px', background: 'var(--bg-card)', borderBottom: '1px solid var(--border)' }}>
+                <div className="container" style={{ textAlign: 'center' }}>
+                    <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 3.5rem)', marginBottom: '20px' }}>Specialized <span style={{ color: 'var(--primary)' }}>HVAC</span> Pricing</h1>
+                    <p style={{ color: 'var(--text-muted)', maxWidth: '800px', margin: '0 auto' }}>
+                        No hidden fees. Just results. Choose the roadmap that fits your business stage.
+                    </p>
+                </div>
+            </header>
 
-            <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-                {plans.map((plan, index) => (
-                    <div
-                        key={index}
-                        className={`relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border ${plan.highlight ? 'border-brand-500 ring-2 ring-brand-500/20 shadow-xl scale-105 z-10' : 'border-gray-200'
-                            } flex flex-col hover:shadow-lg transition-all duration-300`}
-                    >
-                        {plan.badge && (
-                            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-brand-600 text-white px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase shadow-sm">
-                                {plan.badge}
-                            </div>
-                        )}
-
-                        <div className="p-8 border-b border-gray-100 flex-grow">
-                            <h3 className="text-xl font-bold text-slate-900 mb-2">{plan.name}</h3>
-                            <div className="flex items-baseline mb-4">
-                                <span className="text-4xl font-extrabold text-slate-900">{plan.price}</span>
-                                <span className="ml-2 text-slate-500 text-sm">/one-time</span>
-                            </div>
-                            <p className="text-slate-600 mb-6 text-sm">{plan.description}</p>
-
-                            <ul className="space-y-4">
-                                {plan.features.map((feature, i) => (
-                                    <li key={i} className="flex items-start">
-                                        <Check className="h-5 w-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                                        <span className="text-slate-700 text-sm">{feature}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        <div className="p-8 pt-0 mt-8">
-                            <Button
-                                to="/contact"
-                                variant={plan.highlight ? 'primary' : 'outline'}
-                                className="w-full"
+            <section>
+                <div className="container">
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', alignItems: 'stretch' }}>
+                        {plans.map((plan, index) => (
+                            <div
+                                key={index}
+                                className="glass"
+                                style={{ 
+                                    position: 'relative', 
+                                    padding: '50px 40px', 
+                                    borderRadius: '32px', 
+                                    border: '1px solid',
+                                    borderColor: plan.highlight ? 'var(--primary)' : 'var(--border)',
+                                    transform: plan.highlight ? 'scale(1.05)' : 'none',
+                                    zIndex: plan.highlight ? 10 : 1,
+                                    background: plan.highlight ? 'rgba(59, 74, 143, 0.05)' : 'rgba(255, 255, 255, 0.02)',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    justifyContent: 'space-between'
+                                }}
                             >
-                                {plan.cta}
-                            </Button>
-                        </div>
+                                {plan.highlight && (
+                                    <div style={{ 
+                                        position: 'absolute', 
+                                        top: '-15px', 
+                                        left: '50%', 
+                                        transform: 'translateX(-50%)', 
+                                        background: 'var(--primary)', 
+                                        color: 'white', 
+                                        padding: '5px 20px', 
+                                        borderRadius: '100px', 
+                                        fontSize: '0.8rem', 
+                                        fontWeight: '800',
+                                        letterSpacing: '1px'
+                                    }}>
+                                        {plan.badge}
+                                    </div>
+                                )}
+
+                                <div>
+                                    <h3 style={{ fontSize: '1.5rem', marginBottom: '10px' }}>{plan.name}</h3>
+                                    <div style={{ display: 'flex', alignItems: 'baseline', marginBottom: '20px' }}>
+                                        <span style={{ fontSize: '3rem', fontWeight: '900', color: 'var(--primary)' }}>{plan.price}</span>
+                                        <span style={{ marginLeft: '10px', color: 'var(--text-muted)', fontSize: '0.9rem' }}>/mo</span>
+                                    </div>
+                                    <p style={{ color: 'var(--text-muted)', marginBottom: '30px', fontSize: '1rem' }}>{plan.description}</p>
+
+                                    <ul style={{ listStyle: 'none', padding: 0, marginBottom: '40px' }}>
+                                        {plan.features.map((feature, i) => (
+                                            <li key={i} style={{ display: 'flex', gap: '15px', marginBottom: '16px', fontSize: '0.95rem' }}>
+                                                <Check size={18} color="var(--primary)" />
+                                                <span>{feature}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                <Link to="/contact" className={plan.highlight ? "btn btn-primary" : "btn btn-outline"} style={{ width: '100%', padding: '16px' }}>
+                                    {plan.cta}
+                                </Link>
+                            </div>
+                        ))}
                     </div>
-                ))}
-            </div>
-        </Section>
+                </div>
+            </section>
+        </div>
     );
 };
 

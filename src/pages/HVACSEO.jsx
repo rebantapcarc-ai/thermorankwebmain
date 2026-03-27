@@ -11,11 +11,11 @@ const HVACSEO = () => {
                     <div style={{ position: 'absolute', bottom: '10%', right: '5%', width: '300px', height: '300px', background: 'var(--secondary)', filter: 'blur(150px)', borderRadius: '50%' }}></div>
                 </div>
                 <div className="container" style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
-                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', background: 'rgba(211, 47, 47, 0.1)', padding: '8px 16px', borderRadius: '100px', marginBottom: '24px', border: '1px solid rgba(211, 47, 47, 0.2)' }}>
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', background: 'rgba(138, 149, 201, 0.15)', padding: '8px 16px', borderRadius: '100px', marginBottom: '24px', border: '1px solid rgba(138, 149, 201, 0.3)' }}>
                         <Search size={16} color="var(--primary)" />
                         <span style={{ fontSize: '0.9rem', fontWeight: '600', color: 'var(--primary)', letterSpacing: '1px', textTransform: 'uppercase' }}>Top-Rated HVAC SEO Agency</span>
                     </div>
-                    <h1 style={{ fontSize: '4rem', marginBottom: '24px', fontWeight: '900', lineHeight: 1.1 }}>
+                    <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 4rem)', marginBottom: '24px', fontWeight: '900', lineHeight: 1.1 }}>
                         Dominating Organic Search <br />
                         <span style={{ color: 'var(--primary)' }}>Exclusively for HVAC Techs</span>
                     </h1>
@@ -64,7 +64,7 @@ const HVACSEO = () => {
                 </div>
             </section>
 
-            <section style={{ background: '#080808', padding: '100px 0' }}>
+            <section style={{ background: '#121940', padding: '100px 0' }}>
                 <div className="container">
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '80px', alignItems: 'center' }}>
                         <div className="glass" style={{ padding: '50px', borderRadius: '32px', position: 'relative', overflow: 'hidden' }}>
@@ -118,7 +118,7 @@ const HVACSEO = () => {
 
             <section style={{ padding: '100px 0' }}>
                 <div className="container" style={{ textAlign: 'center' }}>
-                    <div className="glass" style={{ padding: '80px 40px', borderRadius: '32px', background: 'linear-gradient(135deg, rgba(211,47,47,0.1) 0%, rgba(255,87,34,0.1) 100%)', border: '1px solid var(--primary)' }}>
+                    <div className="glass" style={{ padding: '80px 40px', borderRadius: '32px', background: 'linear-gradient(135deg, rgba(59,74,143,0.1) 0%, rgba(14,20,51,0.1) 100%)', border: '1px solid var(--primary)' }}>
                         <h2 style={{ fontSize: '2.5rem', marginBottom: '24px' }}>Ready to Own Your Zip Code?</h2>
                         <p style={{ marginBottom: '40px', maxWidth: '600px', margin: '0 auto 40px' }}>
                             We only work with ONE HVAC company per market. Check if your territory is still available before your competitor does.

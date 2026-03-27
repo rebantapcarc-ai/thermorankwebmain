@@ -48,13 +48,13 @@ const Navbar = () => {
             </div>
             
             {isOpen && (
-                <div className="mobile-menu glass" style={{ position: 'absolute', top: '80px', left: 0, right: 0, padding: '20px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <div className="mobile-menu glass" style={{ position: 'absolute', top: '80px', left: 0, right: 0, padding: '30px', display: 'flex', flexDirection: 'column', gap: '24px', textAlign: 'center' }}>
                     {navLinks.map((link) => (
-                        <Link key={link.name} to={link.path} onClick={() => setIsOpen(false)} className="nav-link">
+                        <Link key={link.name} to={link.path} onClick={() => setIsOpen(false)} className="nav-link" style={{ fontSize: '1.2rem' }}>
                             {link.name}
                         </Link>
                     ))}
-                    <Link to="/contact" onClick={() => setIsOpen(false)} className="btn btn-primary">Free Audit</Link>
+                    <Link to="/contact" onClick={() => setIsOpen(false)} className="btn btn-primary" style={{ width: '100%' }}>Free Audit</Link>
                 </div>
             )}
         </nav>

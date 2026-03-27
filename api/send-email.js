@@ -1,9 +1,42 @@
 import { Resend } from 'resend';
+import { Redis } from '@upstash/redis'
+import { Ratelimit } from '@upstash/ratelimit'
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// Create a new ratelimiter, that allows 3 requests per 24 hours per IP
+// (Adjust these counts as needed for your specific use case)
+let ratelimit = null;
+if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
+    const redis = new Redis({
+        url: process.env.UPSTASH_REDIS_REST_URL,
+        token: process.env.UPSTASH_REDIS_REST_TOKEN,
+    })
+    ratelimit = new Ratelimit({
+        redis: redis,
+        limiter: Ratelimit.slidingWindow(3, '24 h'),
+    })
+}
+
 export default async function handler(req, res) {
   if (req.method === 'POST') {
+    // Rate limiting check
+    if (ratelimit) {
+        const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+        const { success, limit, reset, remaining } = await ratelimit.limit(`ratelimit_${ip}`);
+        
+        if (!success) {
+            console.warn(`Rate limit exceeded for IP: ${ip}`);
+            return res.status(429).json({ 
+                success: false, 
+                error: "Too many requests. Please try again after 24 hours.",
+                limit, 
+                remaining, 
+                reset 
+            });
+        }
+    }
+
     const { name, email, message, company, phone, state, techs } = req.body;
 
     // Use a placeholder email or environment variable for the recipient.
@@ -45,4 +78,3 @@ export default async function handler(req, res) {
     res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
-
