@@ -10,11 +10,11 @@ const HVACWebDesign = () => {
                     <div style={{ position: 'absolute', top: '15%', right: '10%', width: '400px', height: '400px', background: 'var(--primary)', filter: 'blur(180px)', borderRadius: '50%' }}></div>
                 </div>
                 <div className="container" style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
-                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', background: 'rgba(138, 149, 201, 0.1)', padding: '8px 16px', borderRadius: '100px', marginBottom: '24px', border: '1px solid rgba(138, 149, 201, 0.2)' }}>
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', background: 'rgba(211, 47, 47, 0.1)', padding: '8px 16px', borderRadius: '100px', marginBottom: '24px', border: '1px solid rgba(211, 47, 47, 0.2)' }}>
                         <Layout size={16} color="var(--primary)" />
                         <span style={{ fontSize: '0.9rem', fontWeight: '600', color: 'var(--primary)', letterSpacing: '1px', textTransform: 'uppercase' }}>Premium HVAC Web Solutions</span>
                     </div>
-                    <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 4rem)', marginBottom: '24px', fontWeight: '900', lineHeight: 1.1 }}>
+                    <h1 style={{ fontSize: '4rem', marginBottom: '24px', fontWeight: '900', lineHeight: 1.1 }}>
                         Websites That Sell While <br />
                         <span style={{ color: 'var(--primary)' }}>Your Techs Are In The Field</span>
                     </h1>
@@ -58,7 +58,7 @@ const HVACWebDesign = () => {
                 </div>
             </section>
 
-            <section style={{ background: '#121940', padding: '100px 0' }}>
+            <section style={{ background: '#080808', padding: '100px 0' }}>
                 <div className="container">
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '60px', alignItems: 'center' }}>
                         <div>
@@ -87,8 +87,8 @@ const HVACWebDesign = () => {
                                     <span style={{ fontWeight: '700' }}>Site Performance Score</span>
                                     <span style={{ color: 'var(--primary)', fontWeight: '800' }}>98/100</span>
                                 </div>
-                                <div style={{ height: '8px', width: '100%', background: '#222C5E', borderRadius: '4px' }}>
-                                    <div style={{ height: '100%', width: '98%', background: 'linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%)', borderRadius: '4px' }}></div>
+                                <div style={{ height: '8px', width: '100%', background: '#222', borderRadius: '4px' }}>
+                                    <div style={{ height: '100%', width: '98%', background: 'linear-gradient(90deg, var(--primary) 0%, #D32F2F 100%)', borderRadius: '4px' }}></div>
                                 </div>
                             </div>
                             <div style={{ padding: '20px', background: 'rgba(255,255,255,0.02)', borderRadius: '15px', border: '1px solid var(--border)' }}>
@@ -96,8 +96,8 @@ const HVACWebDesign = () => {
                                     <span style={{ fontWeight: '700' }}>Mobile Conversion Rate</span>
                                     <span style={{ color: 'var(--secondary)', fontWeight: '800' }}>14.2%</span>
                                 </div>
-                                <div style={{ height: '8px', width: '100%', background: '#222C5E', borderRadius: '4px' }}>
-                                    <div style={{ height: '100%', width: '85%', background: 'linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%)', borderRadius: '4px' }}></div>
+                                <div style={{ height: '8px', width: '100%', background: '#222', borderRadius: '4px' }}>
+                                    <div style={{ height: '100%', width: '85%', background: 'linear-gradient(90deg, var(--secondary) 0%, #FF9800 100%)', borderRadius: '4px' }}></div>
                                 </div>
                                 <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '10px' }}>*Industry average is 3.5%</p>
                             </div>

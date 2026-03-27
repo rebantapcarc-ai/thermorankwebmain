@@ -6,7 +6,7 @@ const About = () => {
         <div className="about-page">
             <header style={{ padding: '120px 0 60px', background: 'var(--bg-card)', borderBottom: '1px solid var(--border)' }}>
                 <div className="container" style={{ textAlign: 'center' }}>
-                    <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 3.5rem)', marginBottom: '20px' }}>The <span style={{ color: 'var(--primary)' }}>HVAC</span> Specialized Agency</h1>
+                    <h1 style={{ fontSize: '3.5rem', marginBottom: '20px' }}>The <span style={{ color: 'var(--primary)' }}>HVAC</span> Specialized Agency</h1>
                     <p style={{ color: 'var(--text-muted)', maxWidth: '800px', margin: '0 auto' }}>
                         Thermo Rank was founded with one goal: to provide HVAC contractors with a marketing partner who actually understands their business.
                     </p>
@@ -15,9 +15,9 @@ const About = () => {
 
             <section>
                 <div className="container">
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '80px', alignItems: 'center' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '80px', alignItems: 'center' }}>
                         <div>
-                            <h2 style={{ fontSize: 'clamp(2rem, 6vw, 2.5rem)', marginBottom: '24px' }}>Born in the <span style={{ color: 'var(--primary)' }}>Trade</span>.</h2>
+                            <h2 style={{ fontSize: '2.5rem', marginBottom: '24px' }}>Born in the <span style={{ color: 'var(--primary)' }}>Trade</span>.</h2>
                             <p style={{ color: 'var(--text-muted)', marginBottom: '20px', fontSize: '1.1rem' }}>
                                 We didn't start as a marketing agency. We started by helping a local HVAC company in Texas get their phone ringing. We saw how generalist agencies were overcharging and under-delivering because they didn't understand the niche.
                             </p>

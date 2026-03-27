@@ -1,15 +1,14 @@
 :root {
-  --primary: #3B4A8F; /* Indigo Blue from palette */
-  --primary-hover: #2F3B7A;
-  --secondary: #8A95C9; /* Soft Lavender from palette */
-  --accent: #3B4A8F;
-  --accent-cream: #ebddbe; /* Updated to Cream per user request */
-  --bg-dark: #0E1433; /* Night Blue from palette */
-  --bg-card: #151D42;
-  --text-main: #EEF1FA; /* Soft White from palette */
-  --text-muted: #8A95C9;
-  --border: #222C5E;
-  --nav-bg: rgba(14, 20, 51, 0.9);
+  --primary: #FF5722; /* Vivid Orange */
+  --primary-hover: #E64A19;
+  --secondary: #D32F2F; /* Energetic Red */
+  --accent: #FF3D00;
+  --bg-dark: #0A0A0A; /* Deeper Black */
+  --bg-card: #141414;
+  --text-main: #FFFFFF;
+  --text-muted: #A0A0A0;
+  --border: #2A2A2A;
+  --nav-bg: rgba(10, 10, 10, 0.8);
   
   --font-main: 'Outfit', sans-serif;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -203,33 +202,10 @@ footer {
 }
 
 @media (max-width: 768px) {
-  section {
-    padding: 60px 0;
-  }
-  
-  h1 { font-size: 2.25rem !important; }
-  h2 { font-size: 1.75rem !important; }
-  h3 { font-size: 1.5rem !important; }
-  
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    grid-template-columns: 1fr 1fr;
   }
-  
-  .md-show {
-    display: block !important;
-  }
-  
   .nav-links {
     display: none;
-  }
-  
-  .grid-2 {
-    grid-template-columns: 1fr !important;
-  }
-  
-  .mobile-menu {
-    border-top: 1px solid var(--border);
-    background: var(--bg-dark);
   }
 }
