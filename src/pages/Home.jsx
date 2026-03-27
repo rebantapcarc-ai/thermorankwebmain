@@ -66,11 +66,12 @@ const Home = () => {
                         EXCLUSIVELY FOR HVAC BUSINESSES
                     </span>
                     
-                    <div className="hero-text-container" style={{ position: 'relative', height: 'clamp(100px, 20vw, 200px)', marginBottom: '20px', width: '100%', zIndex: 10, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div className="hero-text-container" style={{ position: 'relative', height: 'clamp(120px, 15vw, 180px)', marginBottom: '20px', width: '100%', zIndex: 10, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         <TextPressure
                             text="THERMORANK"
                             flex
                             alpha={false}
+                            scale={true}
                             stroke
                             width
                             weight
