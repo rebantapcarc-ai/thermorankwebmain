@@ -1,4 +1,9 @@
 :root {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   --primary: #3B4A8F; /* Indigo Blue from palette */
   --primary-hover: #2F3B7A;
   --secondary: #8A95C9; /* Soft Lavender from palette */
@@ -26,8 +31,10 @@ body {
   font-family: var(--font-main);
   background-color: var(--bg-dark);
   color: var(--text-main);
-  line-height: 1.6;
+  line-height: 1.5;
   overflow-x: hidden;
+  font-size: 1rem;
+  -webkit-text-size-adjust: 100%;
 }
 
 h1, h2, h3, h4, .font-bold {

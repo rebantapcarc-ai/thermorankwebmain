@@ -77,7 +77,7 @@ const Home = () => {
                             italic={false}
                             textColor="#3B4A8F"
                             strokeColor="#151D42"
-                            minFontSize={window.innerWidth < 768 ? 40 : 80}
+                            minFontSize={40}
                         />
                     </div>
 
